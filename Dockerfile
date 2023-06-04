@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FROM openjdk:11-jdk-slim
+FROM openjdk-11
 ENV CATALINA_HOME /opt/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
