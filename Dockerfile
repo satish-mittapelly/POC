@@ -10,8 +10,8 @@ RUN apt-get install vim wget zip gettext -y
 ENV TOMCAT_VERSION 10.1.9
 COPY tomcat.tar.gz .
 RUN tar -xf tomcat.tar.gz
-RUN mv tomcat/* /opt/tomcat/
-RUN rm -rf tomcat.tar.gz tomcat
+RUN mv tomcat/apache-tomcat-9.0.74/* /opt/tomcat/apache-tomcat-9.0.74/
+RUN rm -rf tomcat.tar.gz tomcat/apache-tomcat-9.0.74
 
 #creating default directories
 COPY poc-0.0.1-SNAPSHOT.war /opt/tomcat/webapps/
