@@ -22,5 +22,5 @@ COPY poc-0.0.1-SNAPSHOT.war /opt/tomcat/webapps/
 #RUN chmod -R 755 /opt/
 #USER SUNDEEP
 
-EXPOSE 8083
+EXPOSE 8080
 CMD ["catalina.sh","run"]
