@@ -30,9 +30,12 @@ pipeline{
 	           echo $M2_HOME
 	           mvn clean install
 	           chmod 755 *
+	    	    withSonarQubeEnv('sonarqube-8.9.10') { 
+                   sh "mvn sonar:sonar"
 		'''	
 		}
 	    }
+    }
           stage('SonarQube analysis') {
         steps{
             script {
