@@ -36,15 +36,6 @@ pipeline{
 		}
 	    }
     }
-          stage('SonarQube analysis') {
-        steps{
-            script {
-        withSonarQubeEnv('sonarqube-8.9.10') { 
-        sh "mvn sonar:sonar"
-        }
-                    }
-        }
-        }
         stage ("Building Docker Image") {
            steps {
                script {
@@ -59,12 +50,11 @@ pipeline{
     	stage ('Upload Image') {
 	       steps {
 		        script {
-			            docker.withRegistry( '', registryCredential ) {
+			            docker.withRegistry( '', registryCredential ) 
 			            dockerImage.push()
             			}
 		}
 	       }
 
     }
-}
 }
