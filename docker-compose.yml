@@ -2,5 +2,7 @@ version: '2'
 services:
  tomcat:
    image: satishmittapelly/poc
+   volumes:
+      - /opt/tom:/tmp
    ports:
     - "8081:8080"
