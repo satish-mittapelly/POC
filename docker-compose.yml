@@ -6,3 +6,15 @@ services:
       - /opt/tom:/tmp
    ports:
     - "8081:8080"
+    networks:
+      - my-network
+ db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=mydatabase
+    networks:
+      - my-network
+networks:
+  my-network:
+
